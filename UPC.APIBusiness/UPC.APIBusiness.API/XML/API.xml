@@ -310,8 +310,22 @@
         </member>
         <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.getJobPosition(System.String)">
             <summary>
-            <paramref name="code"/>
+            <param name="code"/>
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.deleteJobPosition(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.createJobPosition(DBEntity.EntityJobPosition)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
             <returns></returns>
         </member>
         <member name="T:UPC.APIBusiness.API.Controllers.ProjectController">

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DBContext;
 using Microsoft.AspNetCore.Authorization;
+using DBEntity;
 
 namespace UPC.APIBusiness.API.Controllers
 {
@@ -8,7 +9,8 @@ namespace UPC.APIBusiness.API.Controllers
     /// 
     /// </summary>
     [Produces("application/json")]
-    [Route("api/job-position")]
+    [Route("api/job-positions")]
+    [ApiController]
     public class JobPositionController : Controller
     {
         /// <summary>
@@ -40,7 +42,7 @@ namespace UPC.APIBusiness.API.Controllers
         }
 
         /// <summary>
-        /// <paramref name="code"/>
+        /// <param name="code"/>
         /// </summary>
         /// <returns></returns>
         [Produces("application/json")]
@@ -50,6 +52,47 @@ namespace UPC.APIBusiness.API.Controllers
         public ActionResult getJobPosition(string code)
         {
             var ret = __JobPositionRepository.getJobPosition(code);
+            return Json(ret);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        [Produces("application/json")]
+        [AllowAnonymous]
+        [HttpDelete]
+        [Route("{code}")]
+        public ActionResult deleteJobPosition(string code)
+        {
+            var ret = __JobPositionRepository.deleteJobPosition(code);
+            return Json(ret);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        [Produces("application/json")]
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("")]
+        public ActionResult createJobPosition(EntityJobPosition entity)
+        {
+            var ret = __JobPositionRepository.createJobPosition(entity);
+            return Json(ret);
+        }
+
+        [Produces("application/json")]
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("{code}")]
+        public ActionResult updateJobPosition(string code, EntityJobPosition entity)
+        {
+            entity.Co_Funcion = code;
+            var ret = __JobPositionRepository.updateJobPosition(entity);
             return Json(ret);
         }
     }
