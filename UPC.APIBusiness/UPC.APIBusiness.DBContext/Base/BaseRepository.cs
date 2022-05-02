@@ -9,6 +9,8 @@ namespace DBContext
 {
     public class BaseRepository
     {
+        private string sqlSchema = "";
+
         public static IConfigurationRoot Configuration { get; set; }
 
         public SqlConnection GetSqlConnection(bool open = true)
@@ -26,6 +28,28 @@ namespace DBContext
             var conn = new SqlConnection(csb.ConnectionString);
             if (open) conn.Open();
             return conn;
+        }
+
+        public string GetSqlSchema()
+        {
+            if (sqlSchema == "")
+            {
+                IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");
+
+                Configuration = builder.Build();
+
+                sqlSchema = Configuration["Logging:AppSettings:SqlConnectionString"];
+
+                if (sqlSchema == null || sqlSchema == "")
+                {
+                    sqlSchema = "dbo";
+                }
+            }
+            
+
+            return sqlSchema;
         }
 
     }

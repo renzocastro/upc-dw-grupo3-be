@@ -9,6 +9,7 @@ namespace DBEntity
         public string No_Servicio { get; set; }
         public decimal Mo_Precio { get; set; }
         public string Tx_Descripcion { get; set; }
+        public string No_Icono { get; set; }
     }
 }
 /*

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace DBContext
 {
-    public class ServiceRepository : BaseRepository, IServiceRepository
+    public class EmployeeRepository : BaseRepository, IEmployeeRepository
     {
         //public ResponseBase getProject(int id)
         //public EntityService getService(int id)
@@ -46,10 +46,12 @@ namespace DBContext
         //    return service;
         //}
 
-        public ResponseBase getServices()
+
+
+        public ResponseBase getEmployees()
         {
             var returnEntity = new ResponseBase();
-            var entitiesServices = new List<EntityService>();
+            var entities = new List<EntityEmployee>();
             
             try
             {
@@ -57,19 +59,19 @@ namespace DBContext
                 {
                     //const string sql = @"usp_ListarProyectos";
                     const string sql = @"grupo3.usp_Listar_Servicios";
-                    entitiesServices = db.Query<EntityService>(sql: sql,
+                    entities = db.Query<EntityEmployee>(sql: sql,
                         commandType: CommandType.StoredProcedure).ToList();
 
-                    if (entitiesServices.Count > 0)
+                    if (entities.Count > 0)
                     {
                         returnEntity.isSuccess = true;
                         returnEntity.errorCode = "0000";
                         returnEntity.errorMessage = string.Empty;
-                        returnEntity.data = entitiesServices;
+                        returnEntity.data = entities;
                     }
                     else
                     {
-                        returnEntity.isSuccess = false;
+                        returnEntity.isSuccess = true;
                         returnEntity.errorCode = "0000";
                         returnEntity.errorMessage = string.Empty;
                         returnEntity.data = null;
@@ -82,6 +84,52 @@ namespace DBContext
                 returnEntity.errorCode = "0001";
                 returnEntity.errorMessage = ex.Message;
                 returnEntity.data = null;
+            }
+
+            return returnEntity;
+        }
+
+        public ResponseBase login(string email, string pw)
+        {
+            var returnEntity = new ResponseBase();
+
+            try
+            {
+                using (var db = GetSqlConnection())
+                {
+                    var p = new DynamicParameters();
+                    p.Add(name: "@email", value: email, dbType: DbType.String, direction: ParameterDirection.Input);
+                    p.Add(name: "@pw", value: pw, dbType: DbType.String, direction: ParameterDirection.Input);
+
+                    const string sql = @"grupo3.usp_login";
+                    var count = db.Query(
+                        sql: sql,
+                        param: p,
+                        commandType: CommandType.StoredProcedure
+                    ).ToList().Count;
+
+                    if (count > 0)
+                    {
+                        returnEntity.isSuccess = true;
+                        returnEntity.errorCode = "0000";
+                        returnEntity.errorMessage = string.Empty;
+                        returnEntity.data = true;
+                    }
+                    else
+                    {
+                        returnEntity.isSuccess = false;
+                        returnEntity.errorCode = "0000";
+                        returnEntity.errorMessage = string.Empty;
+                        returnEntity.data = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                returnEntity.isSuccess = false;
+                returnEntity.errorCode = "0001";
+                returnEntity.errorMessage = ex.Message;
+                returnEntity.data = false;
             }
 
             return returnEntity;

@@ -36,6 +36,10 @@
 
   <ItemGroup>
     <Folder Include="XML\" />
+    <Folder Include="VO\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Interface\" />
+  </ItemGroup>
 </Project>

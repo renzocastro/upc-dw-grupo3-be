@@ -262,6 +262,58 @@
             <param name="app"></param>
             <param name="env"></param>
         </member>
+        <member name="T:UPC.APIBusiness.API.Controllers.AuthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UPC.APIBusiness.API.Controllers.AuthController.__EmployeeRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.AuthController.#ctor(DBContext.IEmployeeRepository)">
+            <summary>
+            
+            </summary>
+            <param name="employeeRepository"></param>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.AuthController.login(API.AuthDataVO)">
+            <summary>
+            
+            </summary>
+            <param name="email"></param>
+            <param name="pw"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UPC.APIBusiness.API.Controllers.JobPositionController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UPC.APIBusiness.API.Controllers.JobPositionController.__JobPositionRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.#ctor(DBContext.IJobPositionRepository)">
+            <summary>
+            
+            </summary>
+            <param name="jobPositionRepository"></param>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.getJobPositions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.getJobPosition(System.String)">
+            <summary>
+            <paramref name="code"/>
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:UPC.APIBusiness.API.Controllers.ProjectController">
             <summary>
             
