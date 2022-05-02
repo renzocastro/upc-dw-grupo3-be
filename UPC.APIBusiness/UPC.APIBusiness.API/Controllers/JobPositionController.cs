@@ -32,7 +32,7 @@ namespace UPC.APIBusiness.API.Controllers
         [Produces("application/json")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("listar")]
+        [Route("")]
         public ActionResult getJobPositions()
         {
             var ret = __JobPositionRepository.getJobPositions();
@@ -46,7 +46,7 @@ namespace UPC.APIBusiness.API.Controllers
         [Produces("application/json")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("obtener")]
+        [Route("{code}")]
         public ActionResult getJobPosition(string code)
         {
             var ret = __JobPositionRepository.getJobPosition(code);

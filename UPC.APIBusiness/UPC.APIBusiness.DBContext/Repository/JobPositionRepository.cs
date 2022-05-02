@@ -10,6 +10,16 @@ namespace DBContext
 {
     public class JobPositionRepository : BaseRepository, IJobPositionRepository
     {
+        public ResponseBase createJobPosition(EntityJobPosition entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResponseBase deleteJobPosition(string code)
+        {
+            throw new NotImplementedException();
+        }
+
         public ResponseBase getJobPosition(string code)
         {
             var returnEntity = new ResponseBase();
@@ -96,7 +106,9 @@ namespace DBContext
             return returnEntity;
         }
 
-        
-
+        public ResponseBase updateJobPosition(EntityJobPosition entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
