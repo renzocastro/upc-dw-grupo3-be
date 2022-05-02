@@ -85,6 +85,12 @@ namespace UPC.APIBusiness.API.Controllers
             return Json(ret);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Produces("application/json")]
         [AllowAnonymous]
         [HttpPut]

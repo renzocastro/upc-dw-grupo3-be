@@ -328,6 +328,14 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.JobPositionController.updateJobPosition(System.String,DBEntity.EntityJobPosition)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
         <member name="T:UPC.APIBusiness.API.Controllers.ProjectController">
             <summary>
             

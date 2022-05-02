@@ -59,7 +59,7 @@ namespace DBContext
                 using (var db = GetSqlConnection())
                 {
                     var param = new DynamicParameters();
-                    param.Add(name: "@rowAffected", dbType: DbType.UInt16, direction: ParameterDirection.Output);
+                    param.Add(name: "@rowAffected", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     param.Add(name: "@code", value: code, dbType: DbType.String, direction: ParameterDirection.Input);
 
                     const string sql = @"usp_Borrar_Funcion";
@@ -183,7 +183,7 @@ namespace DBContext
                 using (var db = GetSqlConnection())
                 {
                     var param = new DynamicParameters();
-                    param.Add(name: "@rowAffected", dbType: DbType.UInt16, direction: ParameterDirection.Output);
+                    param.Add(name: "@rowAffected", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     param.Add(name: "@code", value: entity.Co_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
                     param.Add(name: "@name", value: entity.No_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
                     param.Add(name: "@descripcion", value: entity.No_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
