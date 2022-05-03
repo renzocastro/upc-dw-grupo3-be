@@ -336,34 +336,6 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="T:UPC.APIBusiness.API.Controllers.ProjectController">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:UPC.APIBusiness.API.Controllers.ProjectController.__ProjectRepository">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:UPC.APIBusiness.API.Controllers.ProjectController.#ctor(DBContext.IProjectRepository)">
-            <summary>
-            
-            </summary>
-            <param name="projectRepository"></param>
-        </member>
-        <member name="M:UPC.APIBusiness.API.Controllers.ProjectController.getProjects">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:UPC.APIBusiness.API.Controllers.ProjectController.getProject(System.Int32)">
-            <summary>
-            <paramref name="id"/>
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:UPC.APIBusiness.API.Controllers.ServiceController">
             <summary>
             
@@ -383,28 +355,6 @@
         <member name="M:UPC.APIBusiness.API.Controllers.ServiceController.getServices">
             <summary>
             
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:UPC.Business.API.Controllers.UserController">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:UPC.Business.API.Controllers.UserController._UserRepository">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:UPC.Business.API.Controllers.UserController.#ctor(DBContext.IUserRepository)">
-            <summary>
-            
-            </summary>
-            <param name="UserRepository"></param>
-        </member>
-        <member name="M:UPC.Business.API.Controllers.UserController.Get">
-            <summary>
-            GetListUser
             </summary>
             <returns></returns>
         </member>

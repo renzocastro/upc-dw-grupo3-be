@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
+﻿using System;
 using DBEntity;
 using Dapper;
 using System.Data;
@@ -19,10 +18,10 @@ namespace DBContext
                 using (var db = GetSqlConnection())
                 {
                     var param = new DynamicParameters();
-                    param.Add(name: "@code", dbType: DbType.String, direction: ParameterDirection.Output);
+                    param.Add(name: "@code", dbType: DbType.String, direction: ParameterDirection.Output, size: 10);
                     param.Add(name: "@name", value: entity.No_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
-                    param.Add(name: "@descripcion", value: entity.No_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
-                    param.Add(name: "@user", value: entity.No_Funcion, dbType: DbType.String, direction: ParameterDirection.Input);
+                    param.Add(name: "@description", value: entity.Tx_Description, dbType: DbType.String, direction: ParameterDirection.Input);
+                    param.Add(name: "@user", value: entity.UsuarioCrea, dbType: DbType.String, direction: ParameterDirection.Input);
 
                     const string sql = @"usp_Insertar_Funcion";
                     db.Query<EntityJobPosition>(

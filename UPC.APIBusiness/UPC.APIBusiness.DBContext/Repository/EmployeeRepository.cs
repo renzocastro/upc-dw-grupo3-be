@@ -1,52 +1,15 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
+﻿using System;
 using DBEntity;
 using Dapper;
 using System.Data;
 using System.Linq;
 using System.Collections.Generic;
 
-using System.Data.SqlClient;
-using System.IO;
-using System.Text;
 
 namespace DBContext
 {
     public class EmployeeRepository : BaseRepository, IEmployeeRepository
     {
-        //public ResponseBase getProject(int id)
-        //public EntityService getService(int id)
-        //{
-        //    //throw new NotImplementedException();
-        //    var service = new EntityService();
-
-        //    try
-        //    {
-                
-        //        using (var db = GetSqlConnection())
-        //        {
-        //            //const string sql = "usp_ObtenerProyecto";
-
-        //            //var p = new DynamicParameters();
-        //            //p.Add(name: "@IDPROYECTO", value: id, dbType: DbType.Int32, direction: ParameterDirection.Input);
-
-        //            //service = db.Query<EntityProject>(
-        //            //    sql: sql,
-        //            //    param: p,
-        //            //    commandType: CommandType.StoredProcedure
-        //            //).FirstOrDefault();
-
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-
-        //    return service;
-        //}
-
-
 
         public ResponseBase getEmployees()
         {
@@ -135,39 +98,5 @@ namespace DBContext
             return returnEntity;
         }
 
-        //public EntityProject getServices(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public List<EntityProject> GetServices()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public List<EntityProject> GetProjects()
-        //{
-        //    //throw new NotImplementedException();
-
-        //    var projects = new List<EntityProject>();
-
-        //    try
-        //    {
-        //        using (var db = GetSqlConnection())
-        //        {
-        //            const string sql = "usp_ListarProyectos";
-        //            projects = db.Query<EntityProject>(
-        //                sql: sql,
-        //                commandType: CommandType.StoredProcedure
-        //            ).ToList();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-
-        //    return projects;
-        //}
     }
 }

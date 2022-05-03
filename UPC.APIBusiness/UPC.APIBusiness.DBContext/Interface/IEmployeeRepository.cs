@@ -8,9 +8,5 @@ namespace DBContext
     {
         ResponseBase getEmployees();
         ResponseBase login(string email, string pw);
-        //ResponseBase getService(int id);
-        //EntityProject getServices(int id);
-
-        //List<EntityProject> GetServices();
     }
 }

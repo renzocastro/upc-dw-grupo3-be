@@ -50,19 +50,5 @@ namespace UPC.APIBusiness.API.Controllers
             return Json(ret);
         }
 
-        ///// <summary>
-        ///// <paramref name="id"/>
-        ///// </summary>
-        ///// <returns></returns>
-        //[Produces("application/json")]
-        //[AllowAnonymous]
-        //[HttpGet]
-        //[Route("obtener")]
-        //public ActionResult getProject(int id)
-        //{
-        //    var ret = __ProjectRepository.getProject(id);
-        //    return Json(ret);
-        //}
-
     }
 }

@@ -120,8 +120,6 @@ namespace API
 
             //TODO: Registrar las interfaces para Inyección de Dependencias
 
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<IServiceRepository, ServiceRepository>();
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IJobPositionRepository, JobPositionRepository>();
